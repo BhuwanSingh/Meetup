@@ -52,7 +52,7 @@ const NewMeetupForm = () => {
             ref={descriptionInputRef}
           ></textarea>
         </div>
-        <div classname={classes.actions}>
+        <div className={classes.actions}>
           <button>Add Meetup.</button>
         </div>
       </form>
