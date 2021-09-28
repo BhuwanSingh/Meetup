@@ -20,7 +20,7 @@ const AllMeetups = () => {
             id: key,
             ...data[key],
           };
-
+          // console.log(meetup)
           meetups.push(meetup);
         }
 
