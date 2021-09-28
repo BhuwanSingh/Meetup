@@ -7,12 +7,13 @@ import NewMeetup from "./pages/NewMeetup";
 import Favourites from "./pages/Favourites";
 
 //Components
-import MainNavigation from "./components/layout/MainNavigation";
+// import MainNavigation from "./components/layout/MainNavigation";
+import Layout from "./components/layout/Layout";
 
 const App = () => {
   return (
-    <div>
-      <MainNavigation />
+    <Layout>
+      {/* <MainNavigation /> */}
       <Switch>
         <Route path="/" exact>
           <AllMeetups />
@@ -24,7 +25,7 @@ const App = () => {
           <Favourites />
         </Route>
       </Switch>
-    </div>
+    </Layout>
   );
 };
 

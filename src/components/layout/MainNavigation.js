@@ -7,7 +7,6 @@ import Logo from './logo.png';
 const MainNavigation = () => {
   return (
     <header className={classes.header}>
-      {/* <div className={classes.logo}>My App Logo</div> */}
       <div><Link to="/"><img src={Logo} height="200px" alt="" /></Link></div>
       <nav>
         <ul>
