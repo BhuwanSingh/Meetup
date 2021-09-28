@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import MeetupList from "../components/meetup/meetuplist";
 
 const DUMMY_DATA = [
@@ -22,10 +24,30 @@ const DUMMY_DATA = [
 ];
 
 const AllMeetups = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadedMeetups , setLoadedMeetups] = useState([]);
+
+  fetch("https://practiceprj-one-default-rtdb.firebaseio.com/meetups")
+    .then((Response) => {
+      return Response.json();
+    })
+    .then((data) => {
+      setIsLoading(false);
+      setLoadedMeetups(data);
+    });
+
+  if(isLoading){
+    return(
+      <section>
+        <p>Loading...</p>
+      </section>
+    )
+  }
+
   return (
     <div>
       <h1> AllMeetups </h1>
-      <MeetupList meetups={DUMMY_DATA} />
+      <MeetupList meetups={loadedMeetups} />
     </div>
   );
 };
